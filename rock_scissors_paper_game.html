@@ -1,0 +1,67 @@
+<html>
+<head>
+	<link type="text/css" rel="stylesheet" href="rock_scissors_paper.css"></link>
+</head>
+<body background="rock_paper_scisors_background.png">
+	<div>
+		<a href="rock_scissors_paper_game.html"><img id="start" src="start_game.png"/></a>
+	<div>
+	<div>
+		<table>
+			<tr>
+				<td><a href="index.html"><img id="exit" src="exit.gif"/></a></td>
+			</tr>
+		</table>
+		
+	</div>	
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+ 
+    $( document ).ready(function() {
+	"a:contains(See All)"
+        $( "a" ).click(function( event ) {
+           alert( "Time to play !" );
+		   var userChoice = prompt("Do you choose rock, paper or scissors?");
+           var computerChoice = Math.random();
+           if (computerChoice < 0.34) {
+	         computerChoice = "rock";
+           } else if(computerChoice <= 0.67) {
+	         computerChoice = "paper";
+           } else {
+	         computerChoice = "scissors";
+           } 
+		   
+		   alert("Computer choice is " + computerChoice);
+
+           var compare = function(choice1, choice2) {
+		if (choice1 === choice2) {
+			alert ("The result is a tie!");
+		} else if (choice1 === "rock") {
+			if (choice2 === "scissors") {
+            alert("rock wins");
+        } else {
+            alert("paper wins");
+        }
+		} else if (choice1 === "paper") {
+			if (choice2 === "rock") {
+				alert("paper wins");
+			} else {
+           alert("scissors wins");
+			}
+		} else if (choice1 === "scissors") {
+			if (choice2 === "rock") {
+				alert("rock wins");
+			}
+			else {
+            alert("scissors wins");
+			}
+		}
+		};
+			compare(userChoice, computerChoice);
+        });
+    });
+ 
+    </script>
+	
+</body>
+</html>

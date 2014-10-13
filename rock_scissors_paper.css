@@ -1,0 +1,22 @@
+#start {
+	height:90px;
+    width:115px;
+	margin-top:60px;
+}
+
+#exit {
+	width:95px;
+	height:80px;
+	border-radius:25px;
+}
+
+table, td {
+	border: 1px black solid;
+	border-radius:25px;
+	margin-left:7px;
+	margin-top:10px;
+}
+
+a {
+    text-decoration:none;
+}

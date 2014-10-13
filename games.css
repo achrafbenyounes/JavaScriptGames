@@ -1,0 +1,25 @@
+div {
+    height:80px;
+    width:120px;
+    border-color:#6485ED;
+    background-color:#BCD2EE;
+    border-width:2px;
+    border-style:solid;
+    border-radius:5px;
+    margin:left;
+    text-align:center;
+}
+
+img {
+	height:70px;
+    width:100px;
+	margin-top:5px;
+}
+
+a {
+    text-decoration:none;
+}
+
+a:hover {
+	background-color:#BCC2EE
+}
