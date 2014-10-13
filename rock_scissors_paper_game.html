@@ -4,22 +4,20 @@
 </head>
 <body background="rock_paper_scisors_background.png">
 	<div>
-		<a href="rock_scissors_paper_game.html"><img id="start" src="start_game.png"/></a>
+		<a id="startGame" href="rock_scissors_paper_game.html"><img id="start" src="start_game.png"/></a>
 	<div>
 	<div>
 		<table>
 			<tr>
-				<td><a href="index.html"><img id="exit" src="exit.gif"/></a></td>
+				<td><a id="exitGame" href="index.html"><img id="exit" src="exit.gif"/></a></td>
 			</tr>
 		</table>
-		
 	</div>	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script>
  
     $( document ).ready(function() {
-	"a:contains(See All)"
-        $( "a" ).click(function( event ) {
+        $( "#startGame" ).click(function( event ) {
            alert( "Time to play !" );
 		   var userChoice = prompt("Do you choose rock, paper or scissors?");
            var computerChoice = Math.random();
