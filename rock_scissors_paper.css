@@ -22,6 +22,7 @@
 .challenge {
     display:in-block-line;
 	margin-left:400px;
+	cursor:pointer;
 }
 
 table, td {
@@ -29,6 +30,13 @@ table, td {
 	border-radius:25px;
 	margin-left:7px;
 	margin-top:10px;
+}
+
+.highlighted {
+    -webkit-box-shadow: 0 0 15px red;
+    -moz-box-shadow: 0 0 15px red;
+    box-shadow: 0 0 15px red;
+    cursor:pointer;
 }
 
 a {

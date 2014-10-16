@@ -22,6 +22,23 @@
     <script type="text/javascript">
      var winner  = "";
     $( document ).ready(function() {
+	
+	    $("#exit").mouseenter(function(event) {
+		   $(this).addClass('highlighted');
+		});
+		
+	    $("#exit").mouseleave(function(event) {
+		   $(this).removeClass('highlighted');
+		});
+		
+		$( "#startGame" ).mouseenter(function(event) {
+		   $(this).addClass('highlighted');
+		});
+		
+	    $( "#startGame" ).mouseleave(function(event) {
+		   $(this).removeClass('highlighted');
+		});
+		
 	    $(".challenge").hide();
         $( "#startGame" ).click(function( event ) {
            alert( "Time to play !" );
@@ -51,11 +68,9 @@
 		    winner = "Computer win, paper wins rock";
 			$("#frameGame").append("<p>" +  winner +"</p>");
 			$("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
-          //  alert("paper wins");
         }
 		} else if (choice1 === "paper") {
 			if (choice2 === "rock") {
-				//alert("paper wins");
 				 winner = "You win, paper wins rock";
 				 $("#frameGame").append("<p>" +  winner +"</p>");
 				 $("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
@@ -63,17 +78,14 @@
 			    winner = "Computer win, scissors wins paper";
 				$("#frameGame").append("<p>" +  winner +"</p>");
 				$("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
-                //alert("scissors wins");
 			}
 		} else if (choice1 === "scissors") {
 			if (choice2 === "rock") {
-				//alert("rock wins");
 				  winner = "Computer win, rock wins scissors";
 				  $("#frameGame").append("<p>" +  winner +"</p>");
 				  $("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
 			}
 			else {
-            //alert("scissors wins");
 			 winner = "You win, scissors wins paper";
 			 $("#frameGame").append("<p>" +  winner +"</p>");
 			 $("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
@@ -92,15 +104,7 @@
 	    $( "#frameGame" ).mouseenter(function( event ) {
 			$("#frameGame").fadeOut('slow');
 		});
-		
-		
-		
     });
-	
-
-	
-	
- 
     </script>
 	
 </body>
