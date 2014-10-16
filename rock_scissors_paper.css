@@ -42,3 +42,26 @@ table, td {
 a {
     text-decoration:none;
 }
+
+form {
+    margin-left:710px;
+    display: inline-block;
+	margin-top:-20px;
+	width:800px;
+	
+}
+
+h2 {
+    font-family:Verdana;
+    display: inline-block;
+    margin-left:660px;
+    font-family:arial;
+	color:yellow;
+}
+
+#listUserChoice option{ 
+    font-family:Verdana
+    font-size:25px;
+	width: 350px;
+	
+}

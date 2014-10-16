@@ -13,6 +13,18 @@
 			</tr>
 		</table>
 	</div>	
+	<div>
+	    <h2>Your choice</h2>
+		<form name="checkListForm">
+			
+			<select id="listUserChoice" class="userChoice">
+               <option value="rock">rock</option>
+               <option value="paper">paper</option>
+			   <option value="scissors">scissors</option>
+            </select>
+			
+		</form>
+	</div>
 	<br/>
 	<div id="frameGame"></div>
 	<div class="challenge"><img src="user.gif"/></div>
@@ -41,12 +53,11 @@
 		
 	    $(".challenge").hide();
         $( "#startGame" ).click(function( event ) {
-           alert( "Time to play !" );
-		   var userChoice = prompt("Do you choose rock, paper or scissors?");
+		   var userChoice = $('.userChoice option:selected').val();
            var computerChoice = Math.random();
            if (computerChoice < 0.34) {
 	         computerChoice = "rock";
-           } else if(computerChoice <= 0.67) {
+           } else if (computerChoice <= 0.67) {
 	         computerChoice = "paper";
            } else {
 	         computerChoice = "scissors";
@@ -91,7 +102,7 @@
 			 $("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
 			}
 		}
-		return winner;
+			return winner;
 		};
 			alert(compare(userChoice, computerChoice, winner));
         }
@@ -106,6 +117,5 @@
 		});
     });
     </script>
-	
 </body>
 </html>
