@@ -13,10 +13,16 @@
 			</tr>
 		</table>
 	</div>	
+	<br/>
+	<div id="frameGame"></div>
+	<div class="challenge"><img src="user.gif"/></div>
+	<div class="challenge"><img src="computer.gif"/></div>
+	<div class="challenge"><img src="equal.gif"/></div>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script>
- 
+    <script type="text/javascript">
+     var winner  = "";
     $( document ).ready(function() {
+	    $(".challenge").hide();
         $( "#startGame" ).click(function( event ) {
            alert( "Time to play !" );
 		   var userChoice = prompt("Do you choose rock, paper or scissors?");
@@ -29,35 +35,71 @@
 	         computerChoice = "scissors";
            } 
 		   
-		   alert("Computer choice is " + computerChoice);
+		  alert("Computer choice is " + computerChoice);
 
-           var compare = function(choice1, choice2) {
+           var compare = function(choice1, choice2, winner) {
 		if (choice1 === choice2) {
-			alert ("The result is a tie!");
+			winner = 'The result is a tie!';
+			$("#frameGame").append("<p>" +  winner +"</p>");
+			$("#frameGame").append('<div class="challenge"><img src="equal.gif"/></div>');
 		} else if (choice1 === "rock") {
 			if (choice2 === "scissors") {
-            alert("rock wins");
+			winner = "You win, rock wins scissors";
+			$("#frameGame").append("<p>" +  winner +"</p>");
+			$("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
         } else {
-            alert("paper wins");
+		    winner = "Computer win, paper wins rock";
+			$("#frameGame").append("<p>" +  winner +"</p>");
+			$("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
+          //  alert("paper wins");
         }
 		} else if (choice1 === "paper") {
 			if (choice2 === "rock") {
-				alert("paper wins");
+				//alert("paper wins");
+				 winner = "You win, paper wins rock";
+				 $("#frameGame").append("<p>" +  winner +"</p>");
+				 $("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
 			} else {
-           alert("scissors wins");
+			    winner = "Computer win, scissors wins paper";
+				$("#frameGame").append("<p>" +  winner +"</p>");
+				$("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
+                //alert("scissors wins");
 			}
 		} else if (choice1 === "scissors") {
 			if (choice2 === "rock") {
-				alert("rock wins");
+				//alert("rock wins");
+				  winner = "Computer win, rock wins scissors";
+				  $("#frameGame").append("<p>" +  winner +"</p>");
+				  $("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
 			}
 			else {
-            alert("scissors wins");
+            //alert("scissors wins");
+			 winner = "You win, scissors wins paper";
+			 $("#frameGame").append("<p>" +  winner +"</p>");
+			 $("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
 			}
 		}
+		return winner;
 		};
-			compare(userChoice, computerChoice);
-        });
+			alert(compare(userChoice, computerChoice, winner));
+        }
+		);
+		
+	    $( "#frameGame" ).click(function( event ) {
+			$("#frameGame").append("<p>" +  winner +"</p>");
+		});
+		
+	    $( "#frameGame" ).mouseenter(function( event ) {
+			$("#frameGame").fadeOut('slow');
+		});
+		
+		
+		
     });
+	
+
+	
+	
  
     </script>
 	

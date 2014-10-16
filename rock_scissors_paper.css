@@ -10,6 +10,20 @@
 	border-radius:25px;
 }
 
+#frameGame {
+	color:red;
+	font-size:20px;
+	background-color:black;
+	margin:center;
+	height:30px;
+	width:390px;
+}
+
+.challenge {
+    display:in-block-line;
+	margin-left:400px;
+}
+
 table, td {
 	border: 1px black solid;
 	border-radius:25px;
