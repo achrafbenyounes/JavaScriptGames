@@ -3,16 +3,7 @@
 	<link type="text/css" rel="stylesheet" href="rock_scissors_paper.css"></link>
 </head>
 <body background="rock_paper_scisors_background.png">
-	<div>
-		<a id="startGame" href="rock_scissors_paper_game.html"><img id="start" src="start_game.png"/></a>
-	<div>
-	<div>
-		<table>
-			<tr>
-				<td><a id="exitGame" href="index.html"><img id="exit" src="exit.gif"/></a></td>
-			</tr>
-		</table>
-	</div>	
+
 	<div>
 	    <h2>Your choice</h2>
 		<form name="checkListForm">
@@ -25,15 +16,31 @@
 			
 		</form>
 	</div>
+	
 	<br/>
 	<div id="frameGame"></div>
 	<div class="challenge"><img src="user.gif"/></div>
 	<div class="challenge"><img src="computer.gif"/></div>
 	<div class="challenge"><img src="equal.gif"/></div>
+	<div>
+		<a id="startGame" href="rock_scissors_paper_game.html"><img id="start" src="start_game.png"/></a>
+	<div>
+	<div>
+		<table>
+			<tr>
+				<td><a id="exitGame" href="index.html"><img id="exit" src="exit.gif"/></a></td>
+			</tr>
+		</table>
+	</div>	
+	<br/>
+	<div><img id="roundGame" src="challenge_computer.gif"/></div>
+	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script type="text/javascript">
      var winner  = "";
     $( document ).ready(function() {
+	
+		$("#roundGame").animate({left: "+=250px"}, 6500);
 	
 	    $("#exit").mouseenter(function(event) {
 		   $(this).addClass('highlighted');
@@ -50,9 +57,10 @@
 	    $( "#startGame" ).mouseleave(function(event) {
 		   $(this).removeClass('highlighted');
 		});
-		
 	    $(".challenge").hide();
+		
         $( "#startGame" ).click(function( event ) {
+		
 		   var userChoice = $('.userChoice option:selected').val();
            var computerChoice = Math.random();
            if (computerChoice < 0.34) {

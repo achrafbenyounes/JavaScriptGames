@@ -52,11 +52,12 @@ form {
 }
 
 h2 {
+    border:3px solid yellow;
     font-family:Verdana;
     display: inline-block;
-    margin-left:660px;
+    margin-left:690px;
     font-family:arial;
-	color:yellow;
+	color:red;
 }
 
 #listUserChoice option{ 
@@ -65,3 +66,8 @@ h2 {
 	width: 350px;
 	
 }
+
+img {
+	position:relative;
+}
+
