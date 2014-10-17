@@ -36,12 +36,18 @@
 	<div><img id="roundGame" src="challenge_computer.gif"/></div>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="jquery-ui.min.js"></script>
+	
     <script type="text/javascript">
      var winner  = "";
     $( document ).ready(function() {
 	
 		$("#roundGame").animate({left: "+=250px"}, 6500);
 	
+	    $("#roundGame").hover(function(event) {
+			$(this).effect('explode'); 
+        });		
+	 
 	    $("#exit").mouseenter(function(event) {
 		   $(this).addClass('highlighted');
 		});
