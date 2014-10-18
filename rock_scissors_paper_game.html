@@ -3,7 +3,6 @@
 	<link type="text/css" rel="stylesheet" href="rock_scissors_paper.css"></link>
 </head>
 <body background="rock_paper_scisors_background.png">
-
 	<div>
 	    <h2>Your choice</h2>
 		<form name="checkListForm">
@@ -16,37 +15,29 @@
 			
 		</form>
 	</div>
-	
 	<br/>
-	<div id="frameGame"></div>
-	<div class="challenge"><img src="user.gif"/></div>
-	<div class="challenge"><img src="computer.gif"/></div>
-	<div class="challenge"><img src="equal.gif"/></div>
-	<div>
+	<div id="pictures">
 		<a id="startGame" href="rock_scissors_paper_game.html"><img id="start" src="start_game.png"/></a>
-	<div>
-	<div>
 		<table>
 			<tr>
 				<td><a id="exitGame" href="index.html"><img id="exit" src="exit.gif"/></a></td>
 			</tr>
 		</table>
-	</div>	
+		<ul class="challenge">
+			<li><img src="user.gif"/></li>
+			<li><img src="computer.gif"/></li>
+			<li><img src="equal.gif"/></li>
+		</ul>
+	</div>
+	<div id="frameGame"></div>
 	<br/>
-	<div><img id="roundGame" src="challenge_computer.gif"/></div>
 	
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="jquery-ui.min.js"></script>
-	
     <script type="text/javascript">
-     var winner  = "";
+	
+    var winner  = "";
     $( document ).ready(function() {
-	
-		$("#roundGame").animate({left: "+=250px"}, 6500);
-	
-	    $("#roundGame").hover(function(event) {
-			$(this).effect('explode'); 
-        });		
 	 
 	    $("#exit").mouseenter(function(event) {
 		   $(this).effect('slide');
@@ -62,10 +53,8 @@
 	    $( "#startGame" ).mouseleave(function(event) {
 		   $(this).removeClass('highlighted');
 		});
-	    $(".challenge").hide();
 		
-        $( "#startGame" ).click(function( event ) {
-		   
+        $( "#startGame" ).click(function(event) {
 		   var userChoice = $('.userChoice option:selected').val();
            var computerChoice = Math.random();
            if (computerChoice < 0.34) {
@@ -76,58 +65,50 @@
 	         computerChoice = "scissors";
            } 
 		   
-		  alert("Computer choice is " + computerChoice);
-
-           var compare = function(choice1, choice2, winner) {
+		 alert("Computer choice is " + computerChoice);
+		 
+         var compare = function(choice1, choice2, winner) {
 		if (choice1 === choice2) {
 			winner = 'The result is a tie!';
 			$("#frameGame").append("<p>" +  winner +"</p>");
-			$("#frameGame").append('<div class="challenge"><img src="equal.gif"/></div>');
+			$("#frameGame").append("<img src='equal.gif'/>");
 		} else if (choice1 === "rock") {
 			if (choice2 === "scissors") {
 			winner = "You win, rock wins scissors";
 			$("#frameGame").append("<p>" +  winner +"</p>");
-			$("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
+            $("#frameGame").append("<img src='user.gif'/>");
         } else {
 		    winner = "Computer win, paper wins rock";
 			$("#frameGame").append("<p>" +  winner +"</p>");
-			$("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
+            $("#frameGame").append("<img src='computer.gif'/>");
         }
 		} else if (choice1 === "paper") {
 			if (choice2 === "rock") {
 				 winner = "You win, paper wins rock";
 				 $("#frameGame").append("<p>" +  winner +"</p>");
-				 $("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
+                 $("#frameGame").append("<img src='user.gif'/>");
 			} else {
 			    winner = "Computer win, scissors wins paper";
 				$("#frameGame").append("<p>" +  winner +"</p>");
-				$("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
+                $("#frameGame").append("<img src='computer.gif'/>");
 			}
 		} else if (choice1 === "scissors") {
 			if (choice2 === "rock") {
 				  winner = "Computer win, rock wins scissors";
 				  $("#frameGame").append("<p>" +  winner +"</p>");
-				  $("#frameGame").append('<div class="challenge"><img src="computer.gif"/></div>');
+                  $("#frameGame").append("<img src='computer.gif'/>");
 			}
 			else {
 			 winner = "You win, scissors wins paper";
 			 $("#frameGame").append("<p>" +  winner +"</p>");
-			 $("#frameGame").append('<div class="challenge"><img src="user.gif"/></div>');
+	         $("#frameGame").append("<img src='user.gif'/>");
 			}
 		}
 			return winner;
 		};
 			alert(compare(userChoice, computerChoice, winner));
-        }
-		);
-		
-	    $( "#frameGame" ).click(function( event ) {
-			$("#frameGame").append("<p>" +  winner +"</p>");
-		});
-		
-	    $( "#frameGame" ).mouseenter(function( event ) {
-			$("#frameGame").fadeOut('slow');
-		});
+
+        });
     });
     </script>
 </body>
