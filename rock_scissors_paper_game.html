@@ -49,11 +49,10 @@
         });		
 	 
 	    $("#exit").mouseenter(function(event) {
-		   $(this).addClass('highlighted');
+		   $(this).effect('slide');
 		});
 		
 	    $("#exit").mouseleave(function(event) {
-		   $(this).removeClass('highlighted');
 		});
 		
 		$( "#startGame" ).mouseenter(function(event) {
@@ -66,7 +65,7 @@
 	    $(".challenge").hide();
 		
         $( "#startGame" ).click(function( event ) {
-		
+		   
 		   var userChoice = $('.userChoice option:selected').val();
            var computerChoice = Math.random();
            if (computerChoice < 0.34) {
